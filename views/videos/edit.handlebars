@@ -1,0 +1,21 @@
+<h1>Save a video</h1>
+<form method="post" action="/videos/{{video.id}}/updates">
+    <label for="title">Title</label>
+    {{#with errors.errors.title as |error|}}
+        <br />
+        <span class="error">{{error.message}}</span>
+    {{/with}}
+    <input type="text" id="title" name="title" placeholder="Title" value="{{video.title}}" />
+
+    <label for="description">Description</label>
+    <textarea type="text" id="description" name="description" placeholder="Description">{{#if video.description}}{{video.description}}{{/if}}</textarea>
+
+    <label for="url">URL</label>
+    {{#with errors.errors.url as |error|}}
+        <br />
+        <span class="error">{{error.message}}</span>
+    {{/with}}
+    <input type="text" id="url" name="url" placeholder="URL" value="{{video.url}}" />
+
+    <input type="submit" id="submit" value="Save a Video" />
+</form>

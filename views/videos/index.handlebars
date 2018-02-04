@@ -1,0 +1,11 @@
+<div class="contents-container" id="videos-container">
+</div>
+<a href="videos/create" id="create-page">Save a video</a>
+
+{{#each videos as |video|}}
+    <div class="video-card">
+        <div class="video-title">
+        <a href="/videos/{{video.id}}">{{video.title}}</a>
+        </div>
+    </div>
+{{/each}}
